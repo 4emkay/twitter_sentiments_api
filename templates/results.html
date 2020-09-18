@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Sentimental Analysis</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+    background-image: linear-gradient(#20002c,#cbb4d4);
+
+}
+* {box-sizing: border-box}
+
+.container {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.skills {
+  text-align: right;
+  padding: 10px;
+  color: white;
+}
+
+.html {width: {{pos_per}}%; background-color: #4CAF50;}
+.css {width: {{neg_per}}%; background-color:  #f44336;}
+.js {width: {{neut_per}}%; background-color:#F7971E;}
+
+</style>
+</head>
+<body>
+
+<h1><b style="color:white">Sentimental analysis for {{query}}</b></h1>
+<h3 style="color:white">Percentage of Positive Sentiment</h3>
+<div class="container">
+  <div class="skills html">
+       {{ pos_per }}
+  </div>
+</div>
+
+<h3 style="color:white">Percentage of Negetive Sentiment</h3>
+<div class="container">
+  <div class="skills css">
+        {{ neg_per }}
+  </div>
+</div>
+
+<h3 style="color:white">Percentage of Neutral Sentiment</h3>
+<div class="container">
+  <div class="skills js">{{neut_per}}</div>
+</div>
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 >Positive Tweets</h1>
+      <br>
+      {{pos_tweets}}
+      <br>
+  </div>
+</div>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1>Negetive Tweets</h1>
+   <br>
+      {{neg_tweets}}
+      <br>  </div>
+</div>
+</body>
+</html>
